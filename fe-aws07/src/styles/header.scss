@@ -1,0 +1,21 @@
+header {
+    background-color: gray;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    .menu-item {
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        font-weight: 900;
+        color: blue;
+    }
+
+    .is-active {
+        background-color: lightblue;
+        border-radius: 7px;
+    }
+}

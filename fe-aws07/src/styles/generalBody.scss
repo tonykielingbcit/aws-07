@@ -1,0 +1,36 @@
+.general-body {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+
+    .left {
+        height: 100%;
+        background-color: gold;
+    }
+
+    .right {
+        height: 100%;
+        background-color: lightgreen;
+        padding: 2rem;
+    }
+
+    .action-item {
+        display: block;
+        text-decoration: none;
+        margin-left: 0.5rem;
+        border: 1px solid red;
+        margin-bottom: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+    }
+    .action-item:first-of-type {
+        margin-top: 2rem;
+    }
+    .action-item:hover {
+        background-color: aquamarine;
+    }
+
+    .is-active {
+        background-color: aquamarine;
+    }
+}

@@ -1,0 +1,8 @@
+https://281lr6sjb7.execute-api.us-west-2.amazonaws.com/items
+
+{
+  "newItem": "newww",
+  "id": 7,
+  "updateItem": "no longer new",
+  "itemIdToBeDelete": 7
+}
