@@ -2,7 +2,10 @@
     .no-option {
         height: 100%;
         display: flex;
-        justify-content: center;
+        // justify-content: center;
+        align-items: center;
+        flex-direction: column;
         margin-top: 3rem;
+        gap: 2rem;
     }
 }

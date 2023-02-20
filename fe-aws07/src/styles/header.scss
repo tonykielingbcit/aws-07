@@ -10,12 +10,14 @@ header {
     .menu-item {
         padding: 0.5rem 1rem;
         text-decoration: none;
-        font-weight: 900;
-        color: blue;
+        font-weight: 400;
+        font-size: large;
+        color: wheat;
     }
 
     .is-active {
         background-color: lightblue;
         border-radius: 7px;
+        color: darkblue;
     }
 }

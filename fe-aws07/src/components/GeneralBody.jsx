@@ -1,10 +1,17 @@
 import "../styles/generalBody.scss";
 import "../styles/actions.scss";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useParams } from "react-router-dom";
+import About from "./About.jsx";
+import GetAll from "./CRUD/GetAll.jsx";
+import GetOne from "./CRUD/GetOne.jsx";
+import Create from "./CRUD/Create.jsx";
+import Delete from "./CRUD/Delete.jsx";
+import Update from "./CRUD/Update.jsx";
 
-export default function GeneralBody({action}) {
+export default function GeneralBody({ action, error, about }) {
   const currentLocation = useLocation().pathname;
-// console.log("actionnnnnnn: ", action)
+  const { itemIdParam } = useParams();
+// console.log("actionnnnnnnnnnn: ", currentLocation, itemIdParam)
     return(
         <div className="general-body">
             <div className="left">
@@ -51,12 +58,30 @@ export default function GeneralBody({action}) {
             </div>
 
             <div className="right">
-                { !action && 
+                {about && 
+                    <div className="no-option">
+                        <About />
+                        <h1>Please, pick an option in the sidebar.</h1>
+                    </div> 
+                }
+                {error && 
+                    <div className="no-option">
+                        <h1>{error}.</h1>
+                        <h1>Please, pick an option in the sidebar.</h1>
+                    </div>
+                }
+
+                { !action && !error && !about &&
                     <div className="no-option">
                         <h1>Pick an option</h1>
                     </div>
                 }
-                <h1>{action}</h1>
+
+                { action === "getAll" && <GetAll /> }
+                { action === "getOne" && <GetOne itemIdParam = {itemIdParam} /> }
+                { action === "create" && <Create /> }
+                { action === "delete" && <Delete /> }
+                { action === "update" && <Update /> }
             </div>
         </div>
     );
