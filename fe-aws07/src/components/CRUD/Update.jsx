@@ -10,17 +10,16 @@ export default function Update() {
   const inputNameRef = useRef("");
 
   const goToBE = async ({ method, param, data }) => {
-    setFormData("");
     setMessage("Processing...");
     
     const result = await goToBackEnd({ method, param, data });
-console.log("result::: ", result)
+    
     if (result.error) {
-      // setFormData("");
       setMessage(result.message);
     } else {
       if (param) {
         const incomingData = result.message[0];
+
         if (!incomingData) {
           setMessage("No such item has been found.");
           return;
@@ -34,16 +33,16 @@ console.log("result::: ", result)
         , 1);
       } else {
         setMessage(`Item '${newName}' has been updated succesfully! \\o/`);
-        setFormData(incomingData);
+        setFormData(result.message);
       }
     }
   };
 
 
   const getItem = () => {
+    setFormData("");
     if (itemId === "") {
       setMessage("Id, please!");
-      setFormData("");
       inputIdRef.current.focus();
       return;
     }
@@ -53,7 +52,6 @@ console.log("result::: ", result)
 
 
   const goToUpdate = () => {
-    console.log("gotoupdate:::: ", newName, itemId, formData)
     if (newName === formData.item) {
       setMessage("No changes at all.");
       return;
@@ -72,27 +70,24 @@ console.log("result::: ", result)
   };
 
   return (
-    <>
-      <h1>Updating A Item</h1>
-      <label>Item Id:</label>
+    <div className="crud">
+      <h1 className="action-title">Updating an Item</h1>
+      <label className="label-crud">Item Id:</label>
       <input type="text" value={itemId} autoFocus onKeyDown={captureEnter} name="id" ref={inputIdRef}
-        onChange={event => setItemId(event.target.value)} />
-      <button onClick={() => getItem()}>Get Item</button>
+        onChange={event => setItemId(event.target.value)} className="input-crud" />
+      <button onClick={() => getItem()} className="button-crud">Get Item</button>
 
       { formData &&
-        <div>
-          <label>New Name: </label>
+        <div className="extra-container-crud">
+          <label className="label-crud">New Name: </label>
           <input type="text" value={newName} ref={inputNameRef} onKeyDown={captureEnter} name="name"
-            onChange={event => setNewName(event.target.value)} />
+            onChange={event => setNewName(event.target.value)} className="input-crud"/>
 
-          <div>
-            <button onClick={goToUpdate}>Update Item</button>
-            {/* <button onClick={noDeletion}>No</button> */}
-          </div>
+            <button onClick={goToUpdate} className="button-crud">Update Item</button>
         </div>
       }
 
-      <h3> { message }</h3>
-    </>
+      <h3 className="message-crud"> { message }</h3>
+    </div>
   )
 }

@@ -31,6 +31,8 @@ export default function Delete() {
         setItemId("");
         setFormData("");
       }
+
+      inputRef.current.focus();
     }
   };
 
@@ -55,27 +57,27 @@ export default function Delete() {
   };
 
   return (
-    <>
-      <h1>Deleting A Item</h1>
-      <label>Item Id:</label>
+    <div className="crud">
+      <h1 className="action-title">Deleting an Item</h1>
+      <label className="label-crud">Item Id:</label>
       <input type="text" value={itemId} autoFocus onKeyDown={captureEnter} name="id" ref={inputRef}
-        onChange={event => setItemId(event.target.value)} />
-      <button onClick={() => getItem()}>Get Item</button>
+        onChange={event => setItemId(event.target.value)} className="input-crud" />
+      <button onClick={() => getItem()} className="button-crud">Get Item</button>
 
       { formData &&
-        <div>
-          <span>Item id: { formData.id }</span>
-          <span>Item name: { formData.item }</span>
+        <div className="extra-container-crud">
+          <span className="label-crud">Item id: { formData.id }</span>
+          <span className="label-crud">Item name: { formData.item }</span>
 
           <h3>Do you confirm deletion?</h3>
-          <div>
-            <button onClick={goToDelete}>Yes</button>
-            <button onClick={noDeletion}>No</button>
+          <div className="cont-bt-crud">
+            <button className="button-crud bt-yes" onClick={goToDelete}>Yes</button>
+            <button className="button-crud bt-no" onClick={noDeletion}>No</button>
           </div>
         </div>
       }
 
-      <h3> { message }</h3>
-    </>
+      <h3 className="message-crud"> { message }</h3>
+    </div>
   )
 }

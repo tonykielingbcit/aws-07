@@ -11,7 +11,7 @@ import Update from "./CRUD/Update.jsx";
 export default function GeneralBody({ action, error, about }) {
   const currentLocation = useLocation().pathname;
   const { itemIdParam } = useParams();
-// console.log("actionnnnnnnnnnn: ", currentLocation, itemIdParam)
+  
     return(
         <div className="general-body">
             <div className="left">

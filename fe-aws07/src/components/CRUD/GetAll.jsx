@@ -1,3 +1,4 @@
+import "../../styles/container.scss";
 import { useEffect, useState } from 'react';
 import goToBackEnd from '../../helpers/goToBackEnd.jsx';
 import BuildTable from '../../helpers/BuildTable.jsx';
@@ -22,9 +23,9 @@ export default function GetAll() {
   }, []);
 
   return (
-    <>
-      <h1>Getting All Items</h1>
+    <div className="crud">
+      <h1 className="action-title">Getting all Items</h1>
       {data ? <BuildTable data = { data } /> : <h3> { message }</h3>}
-    </>
+    </div>
   )
 }

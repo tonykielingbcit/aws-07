@@ -32,14 +32,14 @@ export default function Create() {
   };
 
   return (
-    <>
-      <h1>Adding A New Item</h1>
-      <label>Item name:</label>
+    <div className="crud">
+      <h1 className="action-title">Adding a New Item</h1>
+      <label className="label-crud">Item name:</label>
       <input type="text" value={itemName} ref={inputRef} autoFocus onKeyDown={captureEnter}
-        onChange={event => setItemName(event.target.value)} />
-      <button onClick={() => goToBE()}>Create Item</button>
+        onChange={event => setItemName(event.target.value)} className="input-crud" />
+      <button onClick={() => goToBE()} className="button-crud">Create Item</button>
 
-      <h3> { message }</h3>
-    </>
+      <h3 className="message-crud"> { message }</h3>
+    </div>
   )
 }

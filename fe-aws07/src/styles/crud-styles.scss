@@ -1,0 +1,74 @@
+.crud {
+    color: darkblue;
+
+    .action-title {
+        margin-bottom: 1.5rem;
+    }
+
+    table {
+        margin-top: 1rem;
+        margin-left: 1rem;
+        min-width: 15rem;
+    }
+    table,tr,th,td {
+        border:1px solid gray;
+     }
+    .table-id {
+        min-width: 4rem;
+        padding-right: 1.5rem;
+        text-align: right;
+    }
+    .table-name {
+        padding-left: 1rem;
+    }
+
+    .label-crud {
+        margin-right: 1rem;
+        font-weight: bold;
+    }
+    .input-crud {
+        border-radius: 7px;
+        padding: 0.5rem 1rem;
+        margin-right: 1rem;
+    }
+    .button-crud {
+        padding: 0.5rem 1rem;
+        border-radius: 7px;
+        border: 1px solid darkgrey;
+        font-weight: bold;
+        outline: none;
+    }
+    .button-crud:hover {
+        box-shadow: 0 0 2px 2px #888888;
+    }
+    .message-crud {
+        margin-top: 2rem;
+        margin-left: 3rem;
+        color: orangered;
+    }
+    .extra-container-crud {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+
+        h3 {
+            margin-top: 1rem;
+            margin-left: 1rem;
+        }
+    }
+    .cont-bt-crud {
+        margin-top: 1rem;
+        margin-left: 2rem;
+    }
+    .bt-yes, .bt-no {
+        width: 7rem;
+    }
+    .bt-yes {
+        background-color: lightcoral;
+        color: brown;
+    }
+    .bt-no {
+        background-color: blue;
+        color: white;
+    }
+
+}
