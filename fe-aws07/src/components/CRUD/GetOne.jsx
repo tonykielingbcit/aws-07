@@ -12,7 +12,7 @@ export default function GetOne({ itemIdParam }) {
   const goToBE = async () => {
     window.history.replaceState(null, "", `/getone/${(itemId || itemIdParam)}`);
 
-    if (itemId === "") {
+    if (itemId === "" && !itemIdParam) {
       setMessage("Number, please!");
       inputRef.current.focus();
       window.history.replaceState(null, "", `/getone/`);
